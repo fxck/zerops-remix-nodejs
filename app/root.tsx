@@ -6,6 +6,13 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import styles from "./styles/main.css?url";
+import { Register } from "./components/Register";
+
+export const links = () => {
+  return [{ rel: "stylesheet", href: styles }];
+};
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -15,8 +22,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="font-opensans">
         {children}
+        <Register />
         <ScrollRestoration />
         <Scripts />
       </body>

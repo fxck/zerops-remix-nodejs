@@ -1,34 +1,34 @@
-# Welcome to Remix + Vite!
+# Zerops + Remix - Nodejs
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
+![Header Image](/header.png)
 
-## Development
+A nodejs Remix example for Zerops which you can deploy in 2 simple steps.
 
-Run the Express server with Vite dev middleware:
+**Features**
 
-```shellscript
-npm run dev
+- Remix
+- Tailwind
+- Prettier
+
+## Instructions to Deploy on Zerops
+
+1. Navigate to the Zerops Dashboard and locate the import project button on the sidebar.
+
+2. Paste the Project Yaml
+
+```yaml
+project:
+  name: zerops-remix
+
+services:
+  - hostname: remixnode
+    type: nodejs@18
+    buildFromGit: https://github.com/fxck/zerops-remix-nodejs
+    ports:
+      - port: 3000
+        httpSupport: true
+    enableSubdomainAccess: true
+    minContainers: 1
 ```
 
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Express applications you should be right at home. Just make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
+If you still find yourself stuck in the process join our [Discord community](https://discord.gg/5ptAqtpyvh).
